@@ -30,8 +30,10 @@ def find_hackathons_Place(city=None,state=None):
 		data = cur.fetchall()
 		for row in data:
 			for itr in row:
-				resString=resString+","+str(itr)
+				resString=resString+str(itr)+","
 		print(resString)
+		answer=render_template('locationPlaceHolder',city=resString)
+		return statement(answer)
 	elif state !=None and city!=None:
 		pass
 	answer=render_template('locationPlaceHolder', city=city)
