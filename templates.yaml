@@ -1,7 +1,13 @@
-welcome: Welcome to memory game. I'm going to say three numbers for you to repeat backwards. Ready?
+welcome: Hello, I am hackathon finder. I can find upcoming hackathon's for you. You can ask me to find hackathons near you, in a particular state , city or you can ask me about upcoming hackathons between dates. 
 
-round: Can you repeat the numbers {{ numbers|join(", ") }} backwards?
+ready: Go on I am ready, shoot me a querry.
 
-win: Good job!
+locationPlaceHolder: Here are the upcoming hackathons in
 
-lose: Sorry, that's the wrong answer.
+near: Upcoming Hackathons  happening near you are 
+
+date: Hackathons happening between startDate and endDate are
+
+deafalutQuestion: Sorry, I didn't get you. Could you please repeat your request.
+
+defaultAnswer: Sorry, that just went over my head. Try another one.

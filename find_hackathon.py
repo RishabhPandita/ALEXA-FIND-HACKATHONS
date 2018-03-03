@@ -16,13 +16,11 @@ cur = db.cursor()
 
 @ask.launch
 def start_app():
-    
-    print('Inside application')
+
     welcome_msg = render_template('welcome')
-    ready = render_template('ready')
-    reprompt = render_template('reprompt')
-    print('New welcome message is::::  ' , welcome_msg)
-    return question(ready).reprompt(reprompt)
+    #reprompt = render_template('reprompt')
+    return question(welcome_msg).reprompt(render_template('ready'))
+
 
 
 if __name__ == '__main__':
