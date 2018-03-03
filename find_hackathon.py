@@ -65,8 +65,8 @@ def find_hackathons_date(startDate=None,endDate=None):
 	res=None
 
 	if startDate!=None and endDate!=None:
-		res=curr.execute("select name from hackathon where startDate>=%s and endDate <=%s",(startDate,endDate,))
-		data=curr.fetchall()
+		res=cur.execute("select name from hackathon where startDate>=%s and endDate <=%s",(startDate,endDate,))
+		data=cur.fetchall()
 		for row in data:
 			for itr in row:
 				resString=resString+str(its)+","
