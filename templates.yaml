@@ -1,6 +1,6 @@
 welcome: Hello
 
-locationPlaceHolder: Here are the upcoming hackathons in {{city}}
+locationPlaceHolder: Here are the upcoming hackathons in {{city}} {resString}
 
 NolocationPlaceHolder: Sorry, I can not find hackathons without a city or state.
 
