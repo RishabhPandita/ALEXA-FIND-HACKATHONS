@@ -1,6 +1,8 @@
 welcome: Hello, I am hackathon finder. I can find upcoming hackathon's for you. You can ask me to find hackathons near you, in a particular state , city. you can ask me about upcoming hackathons between dates.  Go on I am ready, shoot me a querry.
 
-locationPlaceHolder: Here are the upcoming hackathons in
+locationPlaceHolder: Here are the upcoming hackathons in {{city|join(", ") }}
+
+NolocationPlaceHolder: Sorry, I can not find hackathons without a city or state.
 
 near: Upcoming Hackathons  happening near you are 
 

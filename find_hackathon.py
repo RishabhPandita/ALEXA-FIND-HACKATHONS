@@ -15,10 +15,18 @@ logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 
 
 @ask.intent("PlaceIntent")
-def find_hackathons_Place():
-	answer=render_template('locationPlaceHolder')
+def find_hackathons_Place(city=None,state=None):
+	if city==None and state==None:
+		answer=render_template('NolocationPlaceHolder')
+		return statement(answer)
+	elif city ==None and state!=None:
+		city=state
+	elif state==None and city!=None:
+		pass
+	elif state !=None and city!=None:
+		pass
+	answer=render_template('locationPlaceHolder', city=city)
 	return statement(answer)
-
 
 
 
