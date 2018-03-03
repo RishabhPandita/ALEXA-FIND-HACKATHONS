@@ -14,6 +14,14 @@ logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 #cur = db.cursor()
 
 
+@ask.intent("PlaceIntent")
+def find_hackathons_Place():
+	answer=render_template('locationPlaceHolder')
+	return statement(answer)
+
+
+
+
 @ask.launch
 def start_app():
     welcome_msg = render_template('welcome')

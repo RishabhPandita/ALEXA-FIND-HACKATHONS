@@ -1,28 +1,15 @@
 {
 	"intents":[{
 
-		"intent":"StateIntent"
-
-	},{
-
-		"intent":"CityIntent"
-
-	},{
-
-		"intent":"DateIntent",
+		"intent":"PlaceIntent",
 		"slots": [{
+         	   "name": "place",
+	           "type": "AMAZON.US_CITY"
 
-            			"name": "startDate",
-			        "type": "AMAZON.DATE"
-
-        			}, {
-				  "name": "endDate",
- 			          "type": "AMAZON.DATE"
-  			 }]
-
-	},{
-
-		"intent":"NearMeIntent"
+        	 },{
+		   "name" : "place",
+		   "type" :"AMAZON.US_STATE"		
+  		 }]
 
 	}]
 }
