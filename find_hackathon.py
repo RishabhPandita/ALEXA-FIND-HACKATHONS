@@ -28,8 +28,7 @@ def find_hackathons_Place(city=None,state=None):
 			print("**********",row)
 	elif state==None and city!=None:
 		res=cur.execute("Select name from hackathon where city=%s",(city,))
-		for row in res:
-			print("**********",row)
+		print(type(res),res)
 	elif state !=None and city!=None:
 		pass
 	answer=render_template('locationPlaceHolder', city=city)
