@@ -25,6 +25,14 @@ def find_hackathons_Place(city=None,state=None):
 	elif city ==None and state!=None:
 		city=state
 		res=cur.execute("Select name from hackathon where state=%s",(state,))
+		data = cur.fetchall()
+		for row in data:
+			for itr in row:
+				resString=resString+str(itr)+","
+		resString = city + " , "+resString
+		answer=render_template('locationPlaceHolder',city=resString)
+		print(resString)
+		return statement(answer)
 	elif state==None and city!=None:
 		res=cur.execute("Select name from hackathon where city=%s",(city,))
 		data = cur.fetchall()
