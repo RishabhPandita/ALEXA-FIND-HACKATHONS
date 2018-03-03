@@ -18,7 +18,7 @@ cur = db.cursor()
 def find_hackathons_Place(city=None,state=None):
 	print(city,state)
 	res=None
-	resString=None
+	resString=""
 	if city==None and state==None:
 		answer=render_template('NolocationPlaceHolder')
 		return statement(answer)
@@ -29,7 +29,7 @@ def find_hackathons_Place(city=None,state=None):
 		res=cur.execute("Select name from hackathon where city=%s",(city,))
 		data = cur.fetchall()
 		for row in data:
-			resString=resString+str(row)
+			resString=resString+","+str(row)
 		print(resString)
 	elif state !=None and city!=None:
 		pass
