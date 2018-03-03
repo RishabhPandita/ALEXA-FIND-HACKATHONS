@@ -17,11 +17,11 @@ cur = db.cursor()
 @ask.launch
 def start_app():
     
-    print 'Inside application'
+    print('Inside application')
     welcome_msg = render_template('welcome')
     ready = render_template('ready')
     reprompt = render_template('reprompt')
-    print 'New welcome message is::::  ' + welcome_msg
+    print('New welcome message is::::  ' , welcome_msg)
     return question(ready).reprompt(reprompt)
 
 
