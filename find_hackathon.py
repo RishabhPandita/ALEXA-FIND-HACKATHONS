@@ -60,7 +60,7 @@ def find_hackathons_Place(city=None,state=None):
 @ask.intent("DateIntent")
 def find_hackathons_date(startDate=None,endDate=None):
 	print(startDate,endDate)
-	dateStr = startDate+" and "+endDate
+	dateStr = str(startDate)+" and "+str(endDate)
 	resString=""
 	res=None
 
