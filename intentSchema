@@ -1,15 +1,17 @@
 {
-	"intents":[{
-
-		"intent":"PlaceIntent",
-		"slots": [{
-         	   "name": "place",
-	           "type": "AMAZON.US_CITY"
-
-        	 },{
-		   "name" : "place",
-		   "type" :"AMAZON.US_STATE"		
-  		 }]
-
-	}]
+  "intents": [
+    {
+      "intent": "PlaceIntent",
+      "slots": [
+        {
+          "name": "city",
+          "type": "AMAZON.US_CITY"
+        },
+        {
+          "name": "state",
+          "type": "AMAZON.US_STATE"
+        }
+      ]
+    }
+  ]
 }

@@ -1,1 +1,10 @@
-PlaceIntent show me hackathons in {place}
+PlaceIntent show me hackathons in {city}
+PlaceIntent which hackathons are going on in {city}
+PlaceIntent tell me about hackathons in {city}
+PlaceIntent show me hackathons in {state}
+PlaceIntent which hackathons are going on in {state}
+PlaceIntent tell me about hackathons in {state}
+PlaceIntent show me hackathons in {city} {state}
+PlaceIntent which hackathons are going on in {city} {state}
+PlaceIntent tell me about hackathons in {city} {state}
+
