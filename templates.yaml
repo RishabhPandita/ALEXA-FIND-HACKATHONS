@@ -6,7 +6,7 @@ NolocationPlaceHolder: Sorry, I can not find hackathons without a city or state.
 
 near: Upcoming Hackathons  happening near you are 
 
-date: Hackathons happening between startDate and endDate are
+date: Hackathons happening between {{res}}
 
 deafalutQuestion: Sorry, I didn't get you. Could you please repeat your request.
 

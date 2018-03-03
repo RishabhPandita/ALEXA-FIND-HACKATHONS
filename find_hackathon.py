@@ -57,6 +57,26 @@ def find_hackathons_Place(city=None,state=None):
 	return statement(answer)
 
 
+@ask.intent("DateIntent")
+def find_hackathons_date(startDate=None,endDate=None):
+	print(startDate,endDate)
+	dateStr = startDate+" and "+endDate
+	resString=""
+	res=None
+
+	if startDate!=None and endDate!=None:
+		res=curr.execute("select name from hackathon where startDate>=%s and endDate <=%s",(startDate,endDate,))
+		data=curr.fetchall()
+		for row in data:
+			for itr in row:
+				resString=resString+str(its)+","
+		resString = dateStr+" are "+resString
+		answer=render_template('date',res=resString)
+		print(resString)
+		return statement(answer)
+
+	answer=render_template('date',)
+
 
 @ask.launch
 def start_app():
