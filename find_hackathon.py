@@ -25,4 +25,9 @@ def start_app():
     return question(ready).reprompt(reprompt)
 
 
+if __name__ == '__main__':
+
+    app.run(debug=True)
+
+
 
