@@ -1,0 +1,7 @@
+StateIntent state {stateName}
+
+CityIntent city {cityName}
+
+NearMeIntent nearme
+
+DateIntent between {startDate} {endDate}				

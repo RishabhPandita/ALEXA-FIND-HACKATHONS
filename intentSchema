@@ -1,0 +1,28 @@
+{
+	"intents":[{
+
+		"intent":"StateIntent"
+
+	},{
+
+		"intent":"CityIntent"
+
+	},{
+
+		"intent":"DateIntent",
+		"slots": [{
+
+            			"name": "startDate",
+			        "type": "AMAZON.DATE"
+
+        			}, {
+				  "name": "endDate",
+ 			          "type": "AMAZON.DATE"
+  			 }]
+
+	},{
+
+		"intent":"NearMeIntent"
+
+	}]
+}

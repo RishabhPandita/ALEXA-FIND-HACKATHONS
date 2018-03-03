@@ -1,0 +1,15 @@
+welcome: Hello, I am hackathon finder. 
+
+function: I can find upcoming hackathon's for you. You can ask me to find hackathons near you, in a particular state , city or you can ask me about upcoming hackathons between dates. 
+
+ready: Go on I am ready, shoot me a querry.
+
+locationPlaceHolder: Here are the upcoming hackathons in
+
+near: Upcoming Hackathons  happening near you are 
+
+date: Hackathons happening between startDate and endDate are
+
+deafalutQuestion: Sorry, I didn't get you. Could you please repeat your request.
+
+defaultAnswer: Sorry, that just went over my head. Try another one.
