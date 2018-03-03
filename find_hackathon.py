@@ -69,7 +69,7 @@ def find_hackathons_date(startDate=None,endDate=None):
 		data=cur.fetchall()
 		for row in data:
 			for itr in row:
-				resString=resString+str(its)+","
+				resString=resString+str(itr)+","
 		resString = dateStr+" are "+resString
 		answer=render_template('date',res=resString)
 		print(resString)
