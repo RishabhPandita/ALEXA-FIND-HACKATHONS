@@ -32,7 +32,7 @@ def find_hackathons_Place(city=None,state=None):
 			for itr in row:
 				resString=resString+str(itr)+","
 		print(resString)
-		answer=render_template('locationPlaceHolder',city=city,resString)
+		answer=render_template('locationPlaceHolder',resString,city=city)
 		return statement(answer)
 	elif state !=None and city!=None:
 		pass
