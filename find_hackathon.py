@@ -23,7 +23,7 @@ def find_hackathons_Place(city=None,state=None):
 		return statement(answer)
 	elif city ==None and state!=None:
 		city=state
-		res=cur.execute("Select Name from hackathon where state=%s",(state))
+		res=cur.execute("Select Name from hackathon where state=%s",(state,))
 		print(res)
 	elif state==None and city!=None:
 		pass
