@@ -33,11 +33,10 @@ def find_hackathons_Place(city=None,state=None):
 		print(resString)
 		return statement(answer)
 	elif state==None and city!=None:
-		res=cur.execute("Select name from hackathon where city=%s",(city,))
+		res=cur.execute("Select name,startDate,endDate from hackathon where city=%s",(city,))
 		data = cur.fetchall()
 		for row in data:
-			for itr in row:
-				resString=resString+str(itr)+","
+			resString=resString+str(row[0])+" from "+str(row[1])+" to "+str(row[2])+","
 		resString = city + " , "+resString
 		answer=render_template('locationPlaceHolder',city=resString)
 		print(resString)
@@ -46,14 +45,14 @@ def find_hackathons_Place(city=None,state=None):
 		res=cur.execute("Select name from hackathon where city=%s and state=%s",(city,state,))
 		data = cur.fetchall()
 		for row in data:
-			for itr in row:
-				resString=resString+str(itr)+","
+			resString=resString+str(row[0])+" from "+str(row[1])+" to "+str(row[2])+","
 		resString = city+" "+state+ " , "+resString
 		answer=render_template('locationPlaceHolder',city=resString)
 		print(resString)
 		return statement(answer)
-	answer=render_template('locationPlaceHolder', city=city)
-	return statement(answer)
+	else:
+		answer=render_template('noAnswer')
+		return statement(answer)
 
 
 @ask.intent("DateIntent")
