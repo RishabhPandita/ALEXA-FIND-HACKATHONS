@@ -24,11 +24,10 @@ def find_hackathons_Place(city=None,state=None):
 		return statement(answer)
 	elif city ==None and state!=None:
 		city=state
-		res=cur.execute("Select name from hackathon where state=%s",(state,))
+		res=cur.execute("Select name,startDate,endDate from hackathon where state=%s",(state,))
 		data = cur.fetchall()
 		for row in data:
-			for itr in row:
-				resString=resString+str(itr)+","
+			resString=resString+str(row[0])+" from "+str(row[1]+" to "+str(row[2]))","
 		resString = city + " , "+resString
 		answer=render_template('locationPlaceHolder',city=resString)
 		print(resString)
@@ -96,7 +95,7 @@ def find_hackathons_date(startDate=None,endDate=None):
 	elif startDate == None and endDate!=None:
 		answer=render_template('noAnswer')
 		return statement(answer)
-	answer=render_template('date',)
+	#answer=render_template('date',)
 
 
 @ask.launch
