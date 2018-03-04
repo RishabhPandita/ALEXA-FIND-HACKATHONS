@@ -111,7 +111,7 @@ def find_hackathons_date(startDate=None,endDate=None):
 
 @ask.launch
 def start_app():
-	count++;
+	count=count+1
 	if count==0:
 		welcome_msg = render_template('welcome')
 	else:
