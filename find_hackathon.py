@@ -43,7 +43,7 @@ def find_hackathons_Place(city=None,state=None):
 		return statement(answer)
 	elif state !=None and city!=None:
 		res=cur.execute("Select name from hackathon where city=%s and state=%s",(city,state,))
-	       	data = cur.fetchall()
+		data = cur.fetchall()
 		for row in data:
 			resString=resString+str(row[0])+" from "+str(row[1])+" to "+str(row[2])+","
 		resString = city+" "+state+ " , "+resString
