@@ -38,22 +38,30 @@ def find_hackathons_Place(city=None,state=None):
 			return statement(answer)
 	elif state==None and city!=None:
 		res=cur.execute("Select name,startDate,endDate from hackathon where city=%s",(city,))
-		data = cur.fetchall()
-		for row in data:
-			resString=resString+str(row[0])+" from "+str(row[1])+" to "+str(row[2])+","
-		resString = city + " , "+resString
-		answer=render_template('locationPlaceHolder',city=resString)
-		print(resString)
-		return statement(answer)
+		if res>0:
+			data = cur.fetchall()
+			for row in data:
+				resString=resString+str(row[0])+" from "+str(row[1])+" to "+str(row[2])+","
+			resString = city + " , "+resString
+			answer=render_template('locationPlaceHolder',city=resString)
+			print(resString)
+			return statement(answer)
+		elif res==0:
+			answer=render_template('noAnswer')
+			return statement(answer)
 	elif state !=None and city!=None:
 		res=cur.execute("Select name from hackathon where city=%s and state=%s",(city,state,))
-		data = cur.fetchall()
-		for row in data:
-			resString=resString+str(row[0])+" from "+str(row[1])+" to "+str(row[2])+","
-		resString = city+" "+state+ " , "+resString
-		answer=render_template('locationPlaceHolder',city=resString)
-		print(resString)
-		return statement(answer)
+		if res>0:
+			data = cur.fetchall()
+			for row in data:
+				resString=resString+str(row[0])+" from "+str(row[1])+" to "+str(row[2])+","
+			resString = city+" "+state+ " , "+resString
+			answer=render_template('locationPlaceHolder',city=resString)
+			print(resString)
+			return statement(answer)
+		elif res==0:
+			answer=render_template('noAnswer')
+			return statement(answer)
 	else:
 		answer=render_template('noAnswer')
 		return statement(answer)
