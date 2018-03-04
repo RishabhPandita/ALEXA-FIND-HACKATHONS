@@ -27,7 +27,7 @@ def find_hackathons_Place(city=None,state=None):
 		res=cur.execute("Select name,startDate,endDate from hackathon where state=%s",(state,))
 		data = cur.fetchall()
 		for row in data:
-			resString=resString+str(row[0])+" from "+str(row[1])+" to "+str(row[2]))+","
+			resString=resString+str(row[0])+" from "+str(row[1])+" to "+str(row[2])+","
 		resString = city + " , "+resString
 		answer=render_template('locationPlaceHolder',city=resString)
 		print(resString)
