@@ -66,15 +66,36 @@ def find_hackathons_date(startDate=None,endDate=None):
 
 	if startDate!=None and endDate!=None:
 		res=cur.execute("select name from hackathon where startDate>=%s and endDate <=%s",(startDate,endDate,))
-		data=cur.fetchall()
-		for row in data:
-			for itr in row:
-				resString=resString+str(itr)+","
-		resString = dateStr+" are "+resString
-		answer=render_template('date',res=resString)
-		print(resString)
-		return statement(answer)
+		if res>0:
+			data=cur.fetchall()
+			for row in data:
+				for itr in row:
+					resString=resString+str(itr)+","
+			resString = dateStr+" are "+resString
+			answer=render_template('date',res=resString)
+			print(resString)
+			return statement(answer)
+		elif res == 0:
+			answer=render_template('noAnswer')
+			return question(answer) 	
+	elif startDate!=None and endDate==None:
+		res=cur.execute("select name from hackathon where startDate=%s",(startDate,))
+		if res>0:
+			data=cur.fetchall()
+			for row in data:
+				for itr in row:
+					resString=resString+str(itr)+","
+			resString = str(startDate)+" are "+resString
+			answer=render_template('onDate',res=resString)
+			print(resString)
+			return statement(answer)
+		elif res ==0:
+			answer=render_template('noAnswer')
+			return question(answer)
 
+	elif startDate==None and endDate == None:
+		answer=render_template('noAnswer')
+		return question(answer)
 	answer=render_template('date',)
 
 

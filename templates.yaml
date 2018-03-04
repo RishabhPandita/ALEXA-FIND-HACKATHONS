@@ -7,7 +7,10 @@ NolocationPlaceHolder: Sorry, I can not find hackathons without a city or state.
 near: Upcoming Hackathons  happening near you are 
 
 date: Hackathons happening between {{res}}
+onDate: Hackathons happening on {{res}}
 
 deafalutQuestion: Sorry, I didn't get you. Could you please repeat your request.
 
 defaultAnswer: Sorry, that just went over my head. Try another one.
+
+noAnswer: Sorry, I could not find any result for your querry.
