@@ -35,7 +35,7 @@ def find_hackathons_Place(city=None,state=None):
 			return statement(answer)
 		elif res ==0:
 			answer=render_template('noAnswer')
-	                return statement(answer)
+			return statement(answer)
 	elif state==None and city!=None:
 		res=cur.execute("Select name,startDate,endDate from hackathon where city=%s",(city,))
 		data = cur.fetchall()
