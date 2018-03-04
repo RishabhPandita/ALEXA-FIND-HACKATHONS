@@ -1,5 +1,5 @@
-welcome: Hello
-
+welcome: Hello,  I can find hackathons for you, based upon city, state and date.You can also ask me to find hackathons for a range of dates or on a particular date. Go on, I am ready.
+hello: Hey
 locationPlaceHolder: Here are the upcoming hackathons in {{city}} 
 
 NolocationPlaceHolder: Sorry, I can not find hackathons without a city or state.

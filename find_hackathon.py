@@ -12,7 +12,7 @@ db = MySQLdb.connect(host="webscrapper-instance.c2ay3hczfmtj.us-east-2.rds.amazo
 			db="mlh_data")
 
 cur = db.cursor()
-
+count=0
 
 @ask.intent("PlaceIntent")
 def find_hackathons_Place(city=None,state=None):
@@ -111,8 +111,12 @@ def find_hackathons_date(startDate=None,endDate=None):
 
 @ask.launch
 def start_app():
-    welcome_msg = render_template('welcome')
-    return question(welcome_msg)
+	count++;
+	if count==0:
+		welcome_msg = render_template('welcome')
+	else:
+		welcome_msg = render_template('hello')
+	return question(welcome_msg)
 
 
 if __name__ == '__main__':
