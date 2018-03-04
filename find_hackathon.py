@@ -93,6 +93,9 @@ def find_hackathons_date(startDate=None,endDate=None):
 	elif startDate==None and endDate == None:
 		answer=render_template('noAnswer')
 		return question(answer)
+	elif startDate == None and endDate!=None:
+		answer=render_template('noAnswer')
+		return statement(answer)
 	answer=render_template('date',)
 
 
