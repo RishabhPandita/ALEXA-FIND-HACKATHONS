@@ -83,7 +83,7 @@ def find_hackathons_date(startDate=None,endDate=None):
 		if res>0:
 			data=cur.fetchall()
 			for row in data:
-				resString=resString+str(row[0])+" at "+str(row[1])+" "str(row[2])+ ","	
+				resString=resString+str(row[0])+" at "+str(row[1])+" "+str(row[2])+ ","	
 			resString = str(startDate)+" are "+resString
 			answer=render_template('onDate',res=resString)
 			print(resString)
