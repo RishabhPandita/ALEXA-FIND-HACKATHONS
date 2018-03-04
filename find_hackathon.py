@@ -65,14 +65,13 @@ def find_hackathons_date(startDate=None,endDate=None):
 	res=None
 
 	if startDate!=None and endDate!=None:
-		res=cur.execute("select name from hackathon where startDate>=%s and endDate <=%s",(startDate,endDate,))
+		res=cur.execute("select name,city,state from hackathon where startDate>=%s and endDate <=%s",(startDate,endDate,))
 		if res>0:
 			data=cur.fetchall()
 			for row in data:
-				for itr in row:
-					resString=resString+str(itr)+","
-			resString = dateStr+" are "+resString
-			answer=render_template('date',res=resString)
+				resString=resString+str(row[0])+" at "+str(row[1])+" "+str(row[2])+ ","	
+			resString = str(startDate)+" are "+resString
+			answer=render_template('onDate',res=resString)
 			print(resString)
 			return statement(answer)
 		elif res == 0:
@@ -91,7 +90,6 @@ def find_hackathons_date(startDate=None,endDate=None):
 		elif res ==0:
 			answer=render_template('noAnswer')
 			return question(answer)
-
 	elif startDate==None and endDate == None:
 		answer=render_template('noAnswer')
 		return question(answer)
